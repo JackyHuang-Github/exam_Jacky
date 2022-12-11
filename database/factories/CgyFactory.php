@@ -17,10 +17,11 @@ class CgyFactory extends Factory
      */
     public function definition()
     {
-        return['subject' => $this->faker->realText(15) ,
-               'enabled' => $this->faker->randomElement([true,false]), 
-               'enabled_at' => Carbon::createFromFormat('Y-m-d',$this->faker->date),
-               'pic' => $this->faker->imageUrl($width = 640, $height = 480)
-            ];
+        return [
+            'subject' => $this->faker->realText(15) ,
+            'enabled' => $this->faker->randomElement([true, false]), 
+            'enabled_at' => Carbon::createFromFormat('Y-m-d', $this->faker->date),
+            'pic' => $this->faker->imageUrl($width = 640, $height = 480)
+        ];
     }
 }

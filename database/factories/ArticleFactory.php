@@ -20,11 +20,11 @@ class ArticleFactory extends Factory
         return [
             'subject' => $this->faker->realText(20),
             'content' => $this->faker->realText,
-            'enabled_at' => Carbon::now()->addDays(rand(0,20)),
-            'sort'  => rand(0,20),
+            'enabled_at' => Carbon::now()->addDays(rand(0, 20)),
+            'sort' => rand(0, 20),
             'pic' => $this->faker->imageUrl,
-            'enabled' => $this->faker->randomElement([true,false]),
-            'cgy_id' => rand(1,20)
+            'enabled' => $this->faker->randomElement([true, false]),
+            'cgy_id' => rand(1, 20)
         ];
     }
 }

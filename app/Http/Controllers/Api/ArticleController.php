@@ -29,8 +29,8 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        $articles= Article::create($request->all());
-        $articles= $article->refresh();
+        $article = Article::create($request->all());
+        $article = $article->refresh();
         return response($article, Response::HTTP_CREATED);
 
         // $subject = $this->request('subject');
@@ -70,8 +70,8 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $articles= Article::find($id);
-        return $articles;
+        $article = Article::find($id);
+        return $article;
     }
 
     /**
@@ -83,9 +83,9 @@ class ArticleController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $articles= Article::find($id);
-        $articles->update($request->all());
-        return $articles;
+        $article = Article::find($id);
+        $article->update($request->all());
+        return $article;
     }
 
     /**
@@ -96,8 +96,8 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        $articles= Article::find($id);
-        $articles->delete();
+        $article = Article::find($id);
+        $article->delete();
         return 'success';
     }
 
@@ -147,7 +147,7 @@ class ArticleController extends Controller
     //計算所有 enabled 為 true 的資料筆數後回傳，利用查詢方法 count()
     public function enabledCount()
     {
-        $articles = Article::where('enabled', true)->count();
-        return $articles;
+        $article = Article::where('enabled', true)->count();
+        return $article;
     }
 }
